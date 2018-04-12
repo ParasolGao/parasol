@@ -1,0 +1,27 @@
+<html>
+<body>
+    <table style="border:1px solid #0094ff;border-collapse:collapse;">
+        <thead>
+            <th style="border:1px solid  #0094ff;">书籍封面</th>
+            <th style="border:1px solid  #0094ff;">书籍编号</th>
+            <th style="border:1px solid  #0094ff;">书籍名称</th>
+            <th style="border:1px solid  #0094ff;">评分</th>
+            <th style="border:1px solid  #0094ff;">评论人数</th>
+            <th style="border:1px solid  #0094ff;">出版社</th>
+        </thead>
+        <tbody>
+            <meta charsert="UTF-8">
+            {% for book in books %}
+            <tr style="border:1px solid  #0094ff;">
+                <td style="border:1px solid  #0094ff;width:200px;height:240px;" align="center"><img style="width:160px;height:192px" src={{ url_for('static', filename='../static%s' %book[5][2:]) }}></td>
+                <td align="center" style="border:1px solid  #0094ff;">{{ book[0] }}</td>
+                <td align="center" style="border:1px solid  #0094ff;">{{ book[1] }}</td>
+                <td style="border:1px solid  #0094ff;">{{ book[2] }}</td>
+                <td style="border:1px solid  #0094ff;">{{ book[3] }}</td>
+                <td style="border:1px solid  #0094ff;" align="center">{{ book[4] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
